@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Libro - Lettura Vocale</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+      background: #fdfdfd;
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Introduzione</h1>
+  <p id="text">
+    Benvenuta/o nel Libricino delle mie giornate!
+
+Questo libricino è tutto per te, per aiutarti a ricordare, raccontare e… allenare la memoria con un pizzico di fantasia!  
+
+Ogni giorno potrai fare un semplice esercizio:  
+- Scrivere che giorno è;
+- Indicare che tempo fa, con l’aiuto delle immagini;  
+- Dire come ti senti, scegliendo l’emoticon giusta; 
+- Raccontare cosa hai fatto il giorno prima.
+
+Ti sembra poco? In realtà è un super allenamento per:  
+- Usare meglio le parole,  
+- Allenare la tua memoria,  
+- Capire meglio le tue emozioni,  
+- E imparare a orientarti nel tempo!  
+
+E non finisce qui!  
+Dentro il libricino troverai anche l’alfabetiere illustrato con tutte le lettere (stampato maiuscolo,  stampato minuscolo e corsivo).
+
+Racconta di un buon piatto, di un dolce, di un gioco divertente, di un viaggio, di un avvenimento bello o brutto che hai vissuto... Scrivi, colora, disegna o fatti aiutare se vuoi: ogni pagina sarà un piccolo pezzetto del tuo mondo!  
+
+Pronto? Si comincia! ✨
+  </p>
+  <button onclick="readText()">Leggi il Testo</button>
+
+  <script>
+    function readText() {
+      const synth = window.speechSynthesis;
+      const utter = new SpeechSynthesisUtterance(document.getElementById("text").innerText);
+      utter.lang = "it-IT";
+      synth.speak(utter);
+    }
+  </script>
+</body>
+</html>
